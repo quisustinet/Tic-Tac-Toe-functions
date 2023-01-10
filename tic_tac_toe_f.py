@@ -1,5 +1,4 @@
-from random import randrange
-#from os import system, name    
+from random import randrange   
 def display_board(board):
     # The function accepts one parameter containing the board's current status
     # and prints it out to the console.
