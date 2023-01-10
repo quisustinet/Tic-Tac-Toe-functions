@@ -12,6 +12,7 @@ def display_board(board):
         print("|")
         print(3*"|       ", sep="", end="|\n")
         print(line)
+    print("\n")
     
 def enter_move(board):
     # The function accepts the board's current status, asks the user about their move, 
@@ -97,22 +98,19 @@ create_board()
 next_move_user=randrange(2)
 make_list_of_free_fields(board)
 while len(free_fields) > 0:
-    print(free_fields)
     display_board(board)
     if next_move_user:
         enter_move(board)
-        #system('cls' if name == 'nt' else 'clear')
     else:
         comp_move(board)
-        #system('cls' if name == 'nt' else 'clear')
-    make_list_of_free_fields(board)
-    if victory_for(board, 'X'):
+        make_list_of_free_fields(board)
+    if victory_for(board, "X"):
         display_board(board)
-        print("\nComputer won.\n")
+        print("Computer won.\n")
         exit()
-    if victory_for(board, 'O'):
+    elif victory_for(board, "O"):
         display_board(board)
-        print("\nYou won.\n")
+        print("You won.\n")
         exit()
 display_board(board)
 print("\nDraw.\n")
